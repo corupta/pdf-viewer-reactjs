@@ -21,7 +21,7 @@ const RenderPdf = ({
     alert,
 }) => {
     const [error, setError] = useState({ status: false, message: '' })
-    const canvasRef = useRef(null)
+    const [canvasRef, setCanvasRef] = useState(null);
 
     const AlertComponent = alert ? alert : Alert
 
@@ -40,7 +40,7 @@ const RenderPdf = ({
                 const viewport = page.getViewport({ scale, rotation })
 
                 // Prepare canvas using PDF page dimensions
-                const canvas = canvasRef.current
+                const canvas = canvasRef;
                 canvas.height = viewport.height
                 canvas.width = viewport.width
 
@@ -121,7 +121,7 @@ const RenderPdf = ({
                 onContextMenu={e =>
                     protectContent ? e.preventDefault() : null
                 }
-                ref={canvasRef}
+                ref={setCanvasRef}
                 width={typeof window !== 'undefined' && window.innerWidth}
                 height={typeof window !== 'undefined' && window.innerHeight}
             />
