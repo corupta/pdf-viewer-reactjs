@@ -1,5 +1,5 @@
 import React from 'react'
-import PDFViewer from 'pdf-viewer-reactjs'
+import PDFViewer from 'pdf-viewer-reactjs-cf'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 
